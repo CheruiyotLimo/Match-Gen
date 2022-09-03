@@ -21,8 +21,8 @@ class Match():
     
     '''All matches to be played on one Match Day.''' 
     def individual_matchday_fixtures(self):
-        match_day_1 = []
-        teamlist = []
+        match_day_1 = [] #Wil iterate over dict in matchday.
+        teamlist = [] #Will ammend to use value of md key.
         max_number = len(self.TEAMS)/2
         for fixture in self.all_fixtures:
             team1, team2 = fixture

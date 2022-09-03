@@ -1,4 +1,4 @@
-from MatchGen.MatchGenerator.team import Team
+from MatchGenerator.team import Team
 class Fixture:
     def __init__(self, team1, team2):
         self.team1 = team1
