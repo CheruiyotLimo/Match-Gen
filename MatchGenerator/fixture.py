@@ -3,11 +3,12 @@ class Fixture:
     def __init__(self, team1, team2):
         self.team1 = team1
         self.team2 = team2
+        self.all_fixtures = []
     
     @classmethod
-    def fixture_creator(cls, teams):
+    def fixture_creator(cls):
         fixture_list = []
-        for team1, team2 in teams:
+        for team1, team2 in cls.all_fixtures:
             return fixture_list.append(Fixture(team1, team2))
 
     def __str__(self):

@@ -1,9 +1,2 @@
-help(map)
-
-list1 = [1, 4, 5,6,7]
-def multiplier( list1):
-
-    lsit2 = list(map(2, list1))
-    return lsit2
-
-multiplier( list1 = list1)
+x = {'Matchday 1': [1, 1, 1, 1], 'Matchday 2': [1, 1, 1, 1], 'Matchday 3': [1, 1, 1, 1], 'Matchday 4': [1, 1, 1, 1], 'Matchday 5': [1, 1, 1, 1], 'Matchday 6': [1, 1, 1, 1], 'Matchday 7': [1, 1, 1, 1], 'Matchday 8': [1, 1, 1, 1], 'Matchday 9': [1, 1, 1, 1], 'Matchday 10': [1, 1, 1, 1]}
+print(x['Matchday 1'])
