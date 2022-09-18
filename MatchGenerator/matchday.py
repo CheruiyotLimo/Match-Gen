@@ -1,5 +1,8 @@
 
 class Matchday():
+    def __init__(self):
+        self.fixtures_all = []
+        
     TEAMS = ["Arsenal", "Man Utd", "Man City", "Tottenham Hotspurs", "Chelsea", "Liverpool"]
 
     def number_of_matchdays(self):
@@ -25,7 +28,7 @@ class Matchday():
         else:
                 print("Valid")
         
-mt = Matchday()
-print(mt.number_of_matchdays())
-print(mt.number_of_fixtures_on_one_matchday())
-mt.md_length_checker(2)
+# mt = Matchday()
+# print(mt.number_of_matchdays())
+# print(mt.number_of_fixtures_on_one_matchday())
+# mt.md_length_checker(2)

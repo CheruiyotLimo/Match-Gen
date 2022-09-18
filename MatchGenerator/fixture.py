@@ -20,7 +20,7 @@ class Fixture:
     
 
 
-ars = Team(name = "Arsenal", stadium = "The Emirates Stadium", abbr = "ARS"),
-chel = Team(name = "Chelsea", stadium = "Stamford Bridge", abbr = "CHE")
-fx = Fixture(ars, chel)
-print(fx)
+# ars = Team(name = "Arsenal", stadium = "The Emirates Stadium", abbr = "ARS"),
+# chel = Team(name = "Chelsea", stadium = "Stamford Bridge", abbr = "CHE")
+# fx = Fixture(ars, chel)
+# print(fx)
