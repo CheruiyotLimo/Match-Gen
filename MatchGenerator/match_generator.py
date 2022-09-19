@@ -15,15 +15,4 @@ class Match():
             team_fixt = [fixt for fixt in self.all_fixtures if team in fixt]
             return team_fixt
     
-    '''All matches to be played on one Match Day.''' 
-    def individual_matchday_fixtures(self):
-        match_day_1 = [] #Wil iterate over dict in matchday.
-        teamlist = [] #Will ammend to use value of md key.
-        max_number = len(self.TEAMS)/2
-        for fixture in self.all_fixtures:
-            team1, team2 = fixture
-            if team1 not in teamlist and team2 not in teamlist:
-                teamlist.append(team1)
-                teamlist.append(team2)
-                match_day_1.append((team1, team2))
-        return match_day_1
+    
