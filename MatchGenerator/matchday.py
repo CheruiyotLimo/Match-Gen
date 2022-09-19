@@ -24,21 +24,19 @@ class Matchday():
     #     }
 
     def individual_matchday_fixtures(self):
-        '''All matches to be played on one Match Day.''' 
+        '''All matches to be played on one MatchDay.''' 
         matchdays = self.number_of_matchdays()
         for md in matchdays:
             checker = []
-            while len(matchdays[md]) < self.number_of_fixtures_on_one_matchday():
-                for fixture in self.fixtures_all:
+            while len(matchdays[md]) < self.number_of_fixtures_on_one_matchday(): #Need a condition to loop it back to find fixtures 
+                for fixture in self.fixtures_all:                                 #that had been passed over the first time  
                     team1, team2 = fixture
                     if team1 not in checker and team2 not in checker:
                         checker.append(team1)
                         checker.append(team2)
-                        # self.matchdays[md].(team1)
-                        # teamlist.append(team2)
                         matchdays[md].append(fixture)
                         self.fixtures_all.remove(fixture)
-                        # self.fixtures_all.pop(team2)
+                
             checker.clear()
         return matchdays
 
