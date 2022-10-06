@@ -7,7 +7,8 @@ class Team():
         self.fixtures = []
     
 
-
+    def __str__(self):
+        return self.name
 # TEAMS = [ars, chel, mancity, manutd, liv, tot]
     # def team_fixtures(self):
     #     return self.all_fixtures.individual_team_fixtures(self.name)

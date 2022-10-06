@@ -1,5 +1,5 @@
 
-from MatchGen.MatchGenerator.team import Team
+from MatchGenerator.team import Team
 import unittest
 
 class TestTeam(unittest.TestCase):
