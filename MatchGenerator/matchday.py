@@ -27,21 +27,21 @@ class Matchday():
 
     def individual_matchday_fixtures_generator(self):
         '''All matches to be played on one MatchDay.''' 
-        matchdays = self.number_of_matchdays()
-        for md in matchdays:
+        # matchdays = self.number_of_matchdays()
+        for md in self.gen_fixtures:
             checker = []
-            # while len(matchdays[md]) < self.number_of_fixtures_on_one_matchday():
-            if len(self.fixtures_all) == 1:
-                return self.fixtures_all
-            for i in range(0, len(self.fixtures_all)-1):                                 #that had been passed over the first time  
+            while len(self.gen_fixtures[md]) < self.number_of_fixtures_on_one_matchday():
+                for i in range(len(self.fixtures_all)):                                     #that had been passed over the first time  
                     team1, team2 = self.fixtures_all[i]
-                    if team1 not in checker and team2 not in checker:
-                        checker.append(team1)
-                        checker.append(team2)
-                        matchdays[md].append(self.fixtures_all[i])
-                        self.fixtures_all.remove(self.fixtures_all[i])   
-            checker.clear()
-        return matchdays
+                    if team1 in checker or team2 in checker:
+                        continue
+                    checker.append(team1)
+                    checker.append(team2)
+                    self.gen_fixtures[md].append(self.fixtures_all[i])          #Need to force the loop to start again after this line
+                    self.fixtures_all.remove(self.fixtures_all[i])
+                    break
+            print(self.gen_fixtures[md])
+        return self.gen_fixtures
 
     def fixture_counter(self):
         count = 0
@@ -51,7 +51,6 @@ class Matchday():
         print(count)
     # def individual_matchdays_printer(self, day: int):
     #     return f"Fixtures on Matchday {d}"
-
     def md_length_checker(self, day_int):                            ##Thinking of using this as a decorator.
         '''Decorator for checking number of matchday matches.'''
         j = f"Matchday {day_int}"
