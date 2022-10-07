@@ -1,4 +1,5 @@
 TEAMS = ["Arsenal", "Man Utd", "Man City", "Tottenham Hotspurs", "Chelsea", "Liverpool"]
+from MatchGenerator.fixture import Fixture
 
 class Matchday():
     def __init__(self):
@@ -28,9 +29,9 @@ class Matchday():
     def individual_matchday_fixtures_generator(self):
         '''All matches to be played on one MatchDay.''' 
         # matchdays = self.number_of_matchdays()
-        for md in self.gen_fixtures:
-            checker = []
-            while len(self.gen_fixtures[md]) < self.number_of_fixtures_on_one_matchday():
+        while len(self.fixtures_all):
+            for md in self.gen_fixtures:
+                checker = []
                 for i in range(len(self.fixtures_all)):                                     #that had been passed over the first time  
                     team1, team2 = self.fixtures_all[i]
                     if team1 in checker or team2 in checker:
@@ -40,7 +41,6 @@ class Matchday():
                     self.gen_fixtures[md].append(self.fixtures_all[i])          #Need to force the loop to start again after this line
                     self.fixtures_all.remove(self.fixtures_all[i])
                     break
-            print(self.gen_fixtures[md])
         return self.gen_fixtures
 
     def fixture_counter(self):
@@ -51,6 +51,12 @@ class Matchday():
         print(count)
     # def individual_matchdays_printer(self, day: int):
     #     return f"Fixtures on Matchday {d}"
+    def md_illustrator(self):
+        for i in self.gen_fixtures:
+            print(i)
+            for j in self.gen_fixtures[i]:
+                print(j)
+
     def md_length_checker(self, day_int):                            ##Thinking of using this as a decorator.
         '''Decorator for checking number of matchday matches.'''
         j = f"Matchday {day_int}"
