@@ -28,17 +28,17 @@ class Matchday():
 
     def individual_matchday_fixtures_generator(self):
         '''All matches to be played on one MatchDay.''' 
-        # matchdays = self.number_of_matchdays()
+
         while len(self.fixtures_all):
             for md in self.gen_fixtures:
                 checker = []
-                for i in range(len(self.fixtures_all)):                                     #that had been passed over the first time  
+                for i in range(len(self.fixtures_all)):                                    
                     team1, team2 = self.fixtures_all[i]
                     if team1 in checker or team2 in checker:
                         continue
                     checker.append(team1)
                     checker.append(team2)
-                    self.gen_fixtures[md].append(self.fixtures_all[i])          #Need to force the loop to start again after this line
+                    self.gen_fixtures[md].append(self.fixtures_all[i])        
                     self.fixtures_all.remove(self.fixtures_all[i])
                     break
         return self.gen_fixtures
