@@ -7,5 +7,5 @@ class Fixture2(team.Team):
     def fixture_class_gen(self):
         for md in self.gen_fixtures:
             for i in self.gen_fixtures[md]:
-                Fixture2(i)
-        return a
+                self.class_fixtures.append(Fixture2(i))
+        return self.class_fixtures
