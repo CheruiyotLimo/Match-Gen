@@ -6,7 +6,7 @@ class TestMatchday(unittest.TestCase):
     def test_generates_number_of_matchdays(self):
         md = Matchday()
         self.assertEqual(
-            md.number_of_matchdays(),
+            md.number_of_matchdays,
             10
         )
 
